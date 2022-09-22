@@ -1,0 +1,69 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<!-- <!doctype html> -->
+
+<!-- <h2 class="text-left" > <span style="color:rgb(47, 0, 255)"> LiquidX Document Generator </span> </h2> -->
+
+
+<h1 class="text-left" style="font-size: 6vh">PDF Document Generator Annotator  <span style="color:rgb(47, 0, 255);font-size: 5vh;"></span></h1>
+<hr>
+
+<!-- <h2 class="text-left" > <span style="color:rgb(47, 0, 255)"> LiquidX Document Generator  </span> </h2> -->
+
+<br><br>
+<body>
+    <br><br>
+    <form action="{{url_for('generate')}}" method=post enctype=multipart/form-data>
+    
+    <div class="text-center">
+        <div class="input-group">
+            <div class="custom-file">
+                <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01" >
+                <label class="custom-file-label" for="inputGroupFile01">Upload Document</label>
+            </div>
+        </div>
+
+    </div>
+    <br>
+   
+    <strong>Processing type:</strong>
+    <div class="form-check"></div>
+    <label> Generate </label>
+    <input type="radio" name="proc"  checked value="g">
+    <label>&nbsp &nbsp Annotate </label>
+    <input type="radio" name="proc"  value="a">
+
+    <br><br>
+    <strong>Font size:</strong>
+    <div class="form-check"></div>
+    <label>  large </label>
+    <input type="radio" name="font_size"  checked value="l">
+    <label>&nbsp &nbsp Medium</label>
+    <input type="radio" name="font_size"  value="m">
+    <label> &nbsp &nbsp Small  </label>
+    <input type="radio" name="font_size"  value="s">
+    <label> &nbsp &nbsp Scalled  </label>
+    <input type="radio" name="font_size"  value="scaled">
+    <br><br>
+    <strong>Background:</strong>
+    <div class="form-check"></div>
+    <label> White </label>
+    <input type="radio" name="bg"  checked value="w">
+    <label>&nbsp &nbsp ML adapted </label>
+    <input type="radio" name="bg"  value="a">
+
+    <br><br>
+    <button type="submit" class="btn btn-raised btn-primary">Process Document</button> 
+</form>
+</body>
+    
+
+
+</div>
+

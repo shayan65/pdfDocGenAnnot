@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  pdfmodifiergenerator:
+    image: pdfmodifiergenerator
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - protocol: "TCP"
+        port: 8080
+        targetPort: 8080
+      
+
+    type: LoadBalancer
+    volumes:
+      - .:/app
+spec:
+  selector:
+    matchLabels:
+      app: pdfdocgen
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: pdfdocgen
+    spec:
+      containers:
+      - name: pdfdocgen
+        image: flask-kubernetes
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
